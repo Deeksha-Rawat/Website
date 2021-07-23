@@ -35,23 +35,25 @@ body,html {
   padding: 20px 0;
   transition: all 0.3s ease-in-out;
 }
-.nav .container .logo {
-    margin-left:130px;
-}
+/* .nav .container .logo {
+    width:350px;
+    margin-top:20px;
+    
+} */
 
 .nav ul {
   display: flex;
   list-style-type: none;
   align-items: center;
   margin-left:58%;
-  margin-top:-20px;
+  margin-top:-40px;
   
   
 }
 
-.nav .container .menu {
+/* .nav .container .menu {
     margin-top:-115px;
-}
+} */
 
 .nav a {
   color: #fff;
@@ -76,7 +78,7 @@ body,html {
 .nav a.current,
 .nav a:hover {
   color: #c0392b;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 
@@ -89,11 +91,11 @@ body,html {
     min-height:500px;
 }
 
-.home .max-width{
-    width: 100%;
+/* .home .max-width{
+    
     display:flex;
 }
-
+ */
 .home .home-content{
     color:white;
 }
@@ -166,11 +168,12 @@ section{
 }
 
 .background-3{
-    /*     background-image: url('https://source.unsplash.com/1600x900/?skills');
-     */    min-height:230px;
-           opacity: 1;
-           background-color: white;
+/*         background-image: url('https://source.unsplash.com/1600x900/?skills');
+ */        min-height:130px;
+           
+
            position: relative;
+           background-color: rgba(237, 243, 245, 0.884);
            
            
         
@@ -178,7 +181,7 @@ section{
     }
 
 
-.title-1,.title-2{
+.title-1,.title-2,.title-93{
     position: absolute;
     top:50%;
     left:0;
@@ -190,9 +193,9 @@ section{
     
 }
 
-.title-3 {
+/* .title-3 {
     
-    color:rgb(78, 71, 71);
+    color:white;
     position: absolute;
     top:30%;
     width:100%;
@@ -200,12 +203,13 @@ section{
     text-align: center;
     
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 700; 
+} *//*
     /* border-bottom: 5px solid blue;
     max-width: fit-content;
     margin-left: 43%; */
         
-}
+
 
 
 .abttitle, .edutitle{
@@ -214,6 +218,8 @@ section{
     padding:20px;
     border:2px solid black;
     border-radius: 10%;
+    color:white;
+    opacity:9999
 }
 
 
@@ -403,7 +409,11 @@ section{
     margin-bottom: 20px;
 }
 
+.project {
+    /* background-color: white; */
+    background-color: rgba(237, 243, 245, 0.884);
 
+}
 
 .project .project-item:hover{
     
@@ -438,7 +448,7 @@ section{
     
     padding:30px;
     margin-left:110px;
-    opacity: 0.5;
+    
     width:80%;
     
     
@@ -451,22 +461,40 @@ section{
     
     
 }
-.contact .title-4{
+.contact .title-4, .project .title-3 {
     display: flex;
     justify-content: center;
     padding:20px;
-    margin-bottom: -20px;
-    border-bottom:2px solid blue;
+    margin-bottom: 20px;
+    margin-top:20px;
+    
 }
+
+.contact .title-4{
+    margin-bottom:-10px
+}
+
+
 
 .form-group input{
     border-radius: 20px;
 }
 
 .form-group:hover{
-    box-shadow: 0 0 2px 2px rgb(96, 96, 233);
+    box-shadow: 0 0 2px 2px rgb(209, 209, 238);
     border-radius: 20px;
 }
 .form-group textarea{
     border-radius: 20px;
 }
+
+.form .text-center input{
+    
+    background-color: rgb(77, 250, 77);
+    border-radius: 20px;
+    display: inline-block;
+    padding:10px 20px;
+    
+}
+
+
