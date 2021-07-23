@@ -29,17 +29,11 @@ body,html {
 }
 
 .nav .container {
-  
- 
   align-items: center;
   padding: 20px 0;
   transition: all 0.3s ease-in-out;
 }
-/* .nav .container .logo {
-    width:350px;
-    margin-top:20px;
-    
-} */
+
 
 .nav ul {
   display: flex;
@@ -51,9 +45,6 @@ body,html {
   
 }
 
-/* .nav .container .menu {
-    margin-top:-115px;
-} */
 
 .nav a {
   color: #fff;
@@ -84,18 +75,14 @@ body,html {
 
 
 
-/* home section styling */
+/**************** home section styling ****************/
+
 .home .container{
     display:flex;
     background: url('');
     min-height:500px;
 }
 
-/* .home .max-width{
-    
-    display:flex;
-}
- */
 .home .home-content{
     color:white;
 }
@@ -139,12 +126,12 @@ section{
     padding:20px;
 }
 
-/* about styling */
+/* /**************** about styling  ****************/
 
 .background-1,.background-2{
 
     position: relative;
-    /* opacity:0.5; */
+   
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -168,20 +155,14 @@ section{
 }
 
 .background-3{
-/*         background-image: url('https://source.unsplash.com/1600x900/?skills');
- */        min-height:130px;
-           
-
-           position: relative;
-           background-color: rgba(237, 243, 245, 0.884);
-           
-           
-        
+        min-height:130px;
+        position: relative;
+        background-color: rgba(237, 243, 245, 0.884);
     
     }
 
 
-.title-1,.title-2,.title-93{
+.title-1,.title-2{
     position: absolute;
     top:50%;
     left:0;
@@ -192,23 +173,6 @@ section{
     
     
 }
-
-/* .title-3 {
-    
-    color:white;
-    position: absolute;
-    top:30%;
-    width:100%;
-    
-    text-align: center;
-    
-    font-size: 50px;
-    font-weight: 700; 
-} *//*
-    /* border-bottom: 5px solid blue;
-    max-width: fit-content;
-    margin-left: 43%; */
-        
 
 
 
@@ -223,11 +187,6 @@ section{
 }
 
 
-
-
-/* .about .about-content .left{
-    width: 45%;
-} */
 .about{
     background-color: white;
     height:500px
@@ -238,18 +197,14 @@ section{
     object-fit: cover;
     border-radius: 6px;
 }
-/*  .about .about-content .block-1{
-    width: 100%;
-    
-}  */
+
 .about .about-content .block-1 .text{
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-/* .about .about-content .right .text span{
-    color: crimson;
-} */
+
+
 .about .about-content .block-1 p{
     text-align: justify;
     margin-top:-270px;
@@ -262,28 +217,10 @@ section{
     padding:30px;
 }
 
-
-
-
-/* parallax */
-.parallax{
-    background-image: url('asset/libraries/particles.js');
-
-    
-
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-
-
-
+/* **********************education ***************** */
 
 .education .education-content h3{
     font-size:50px;
-    
     margin-left:100px;
     margin-top:-50px;
     margin-bottom:40px
@@ -291,7 +228,8 @@ section{
 }
 
 .education .resume-title, .skill-title{
-    font-size:25px;
+    font-size:30px;
+    color:rgb(192, 185, 185);
     font-weight:700;
     margin-top:20px;
     margin-bottom:20px;
@@ -361,7 +299,7 @@ section{
     margin-left:20px;
     color:#45505b;
     z-index: 9999;
-    font-size: 24px;
+    font-size: 28px;
     position: relative
     
 }    
@@ -370,47 +308,16 @@ section{
     transition: all 0.3s;
 }    
 
-/*  .skill-item{
-    border-left: 2px solid white;
-    padding: 0 0 20px 20px;
-    position: relative;
-} */
-
-/*  .skill-item h4{
-    color:#5063bb;
-    font-size: 18px;
-    font-weight:600;
-    font-family:"Poppins",sans-serif;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    line-height: 10px;
-
-
-  
-    
-
-}
- */
 .skill-item svg{
     margin-left:10px
 }
-
-
-/* .projects-skills .js-project{
-    
-    position:fixed;
-
-} */
-
-
-
 
 .project .project-item{
     margin-bottom: 20px;
 }
 
 .project {
-    /* background-color: white; */
+   
     background-color: rgba(237, 243, 245, 0.884);
 
 }
@@ -438,6 +345,7 @@ section{
     line-height:70px;
 }
 
+/* **********contact************** */
 
 .contact {
     background-color: white;
@@ -448,25 +356,24 @@ section{
     
     padding:30px;
     margin-left:110px;
-    
     width:80%;
-    
     
 } 
 
 
 .contact .form .form-group{
-    margin:50px;
-    
-    
+    margin:50px; 
     
 }
-.contact .title-4, .project .title-3 {
+
+
+.contact .title-4 h3, .project .title-3 h3{
     display: flex;
     justify-content: center;
     padding:20px;
     margin-bottom: 20px;
     margin-top:20px;
+    font-size:40px
     
 }
 
@@ -484,6 +391,7 @@ section{
     box-shadow: 0 0 2px 2px rgb(209, 209, 238);
     border-radius: 20px;
 }
+
 .form-group textarea{
     border-radius: 20px;
 }
@@ -497,4 +405,54 @@ section{
     
 }
 
+/* **************footer***********8 */
+
+.wavy{
+    position:relative;
+    margin:0;
+    padding:0;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    height:320px
+}
+
+footer{
+    background-color: #7289da;
+    height:100%;
+    width:100%;
+    text-align: center;
+    
+}
+
+
+
+.parallax use{
+    animation:move-forever 30s cubic-bezier(.55,.6,.45,.5) infinite;
+}
+.parallax use:nth-child(1){
+    animation-delay: -1s;
+    animation-duration: 7s;
+}
+.parallax use:nth-child(2){
+    animation-delay: -2s;
+    animation-duration: 10s;
+}
+.parallax use:nth-child(3){
+    animation-delay: -5s;
+    animation-duration: 17s;
+}
+.parallax use:nth-child(4){
+    animation-delay: -3s;
+    animation-duration: 14s;
+}
+
+@keyframes move-forever {
+    0%{
+        transform:translate3d(-90px,0,0)
+    }
+    100%{
+        transform:translate3d(80px,0,0)
+    }
+
+}
 
