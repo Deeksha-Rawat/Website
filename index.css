@@ -139,7 +139,7 @@ section{
 
 /* about styling */
 
-.background-1,.background-2,.background-3 {
+.background-1,.background-2{
 
     position: relative;
     /* opacity:0.5; */
@@ -164,16 +164,21 @@ section{
     
 
 }
+
 .background-3{
-    background-image: url('https://source.unsplash.com/1600x900/?skills');
-    min-height:350px;
-    opacity: 0.5;
+    /*     background-image: url('https://source.unsplash.com/1600x900/?skills');
+     */    min-height:230px;
+           opacity: 1;
+           background-color: white;
+           position: relative;
+           
+           
+        
     
+    }
 
-}
 
-
-.title-1,.title-2,.title-3{
+.title-1,.title-2{
     position: absolute;
     top:50%;
     left:0;
@@ -183,6 +188,23 @@ section{
     text-align:center;
     
     
+}
+
+.title-3 {
+    
+    color:rgb(78, 71, 71);
+    position: absolute;
+    top:30%;
+    width:100%;
+    
+    text-align: center;
+    
+    font-size: 50px;
+    font-weight: 700;
+    /* border-bottom: 5px solid blue;
+    max-width: fit-content;
+    margin-left: 43%; */
+        
 }
 
 
@@ -368,12 +390,83 @@ section{
 }
 
 
+/* .projects-skills .js-project{
+    
+    position:fixed;
+
+} */
 
 
 
 
+.project .project-item{
+    margin-bottom: 20px;
+}
 
 
 
+.project .project-item:hover{
+    
+    border-radius: 10px;
+    opacity:0.7;
+    box-shadow: 0 0 2px 2px rgb(75, 74, 74);
+
+}
+
+.project .project-item .project-details img{
+    border:2px solid white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-top:10px
+   
+}
+
+.project .project-item .project-details h3{
+    color:white;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    line-height:70px;
+}
 
 
+.contact {
+    background-color: white;
+
+}
+
+.contact .form {
+    
+    padding:30px;
+    margin-left:110px;
+    opacity: 0.5;
+    width:80%;
+    
+    
+} 
+
+
+.contact .form .form-group{
+    margin:50px;
+    
+    
+    
+}
+.contact .title-4{
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    margin-bottom: -20px;
+    border-bottom:2px solid blue;
+}
+
+.form-group input{
+    border-radius: 20px;
+}
+
+.form-group:hover{
+    box-shadow: 0 0 2px 2px rgb(96, 96, 233);
+    border-radius: 20px;
+}
+.form-group textarea{
+    border-radius: 20px;
+}
