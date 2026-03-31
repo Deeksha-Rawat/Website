@@ -37,7 +37,7 @@ const projects: Project[] = [
     title: "Personal Portfolio",
     description:
       "My personal portfolio, showcasing my skills and projects with a clean, professional design.",
-    tags: ["HTML5", "CSS3", "Tailwind Css", "JavaScript"],
+    tags: ["Reactjs", "Nextjs", "CSS3", "JavaScript", "Tailwind Css"],
     githubUrl: "https://github.com/Deeksha-Rawat/Website",
     liveUrl: "https://myportfolio-9.netlify.app/",
     rotate: -1,

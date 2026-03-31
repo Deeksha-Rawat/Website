@@ -10,11 +10,13 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrapbookDecorations from "@/components/ScrapbookDecorations";
 import PlaneCursor from "@/components/PlaneCursor";
+import PlaneGraffiti from "@/components/PlaneGraffiti";
 
 export default function Home() {
   return (
     <>
       <PlaneCursor />
+      <PlaneGraffiti />
       <ScrapbookDecorations />
       <Header />
       <main className="container mx-auto px-6 relative z-10 max-w-6xl">
