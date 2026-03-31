@@ -1,0 +1,403 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f5f0e8;
+  --paper-dark: #e8dfd0;
+  --kraft: #c9a96e;
+  --ink: #3d2b1f;
+  --ink-light: #6b5744;
+  --ink-faded: #9b8b78;
+  --tape-pink: #f8c8dc;
+  --tape-mint: #b8e6d0;
+  --tape-yellow: #f9e4a0;
+  --tape-lavender: #d4c5f0;
+  --tape-blue: #b8d4e8;
+  --sticky-yellow: #fff9c4;
+  --sticky-pink: #fce4ec;
+  --sticky-blue: #e3f2fd;
+  --sticky-green: #e8f5e9;
+  --accent-coral: #e8856c;
+  --accent-teal: #5ba4a4;
+  --accent-mustard: #d4a843;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-special-elite), "Courier New", monospace;
+  background-color: var(--paper);
+  color: var(--ink);
+  background-image: radial-gradient(circle, #d4c8b8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Scrapbook Nav ── */
+.scrapbook-nav {
+  background: rgba(245, 240, 232, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px dashed var(--kraft);
+}
+
+/* ── Washi Tape (centered) ── */
+.washi-tape {
+  position: relative;
+}
+.washi-tape::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 120px;
+  height: 26px;
+  background: var(--tape-mint);
+  opacity: 0.65;
+  z-index: 10;
+  border-radius: 2px;
+}
+
+/* ── Tape Corner Helpers ── */
+.tape-tl::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 60px;
+  height: 22px;
+  background: var(--tape-yellow);
+  opacity: 0.65;
+  transform: rotate(-45deg);
+  z-index: 10;
+  border-radius: 2px;
+}
+.tape-tr::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 22px;
+  background: var(--tape-pink);
+  opacity: 0.65;
+  transform: rotate(45deg);
+  z-index: 10;
+  border-radius: 2px;
+}
+.tape-bl::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  width: 60px;
+  height: 22px;
+  background: var(--tape-lavender);
+  opacity: 0.65;
+  transform: rotate(45deg);
+  z-index: 10;
+  border-radius: 2px;
+}
+.tape-br::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 60px;
+  height: 22px;
+  background: var(--tape-blue);
+  opacity: 0.65;
+  transform: rotate(-45deg);
+  z-index: 10;
+  border-radius: 2px;
+}
+
+/* ── Push Pin ── */
+.push-pin {
+  position: relative;
+}
+.push-pin::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at 38% 38%, #ff6b6b, #cc3333);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+/* ── Sticky Note ── */
+.sticky-note {
+  background: var(--sticky-yellow);
+  padding: 1.5rem;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.sticky-note::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 24px 24px;
+  border-color: transparent transparent var(--paper) transparent;
+}
+.sticky-pink {
+  background: var(--sticky-pink);
+}
+.sticky-blue {
+  background: var(--sticky-blue);
+}
+.sticky-green {
+  background: var(--sticky-green);
+}
+
+/* ── Polaroid Frame ── */
+.polaroid {
+  background: white;
+  padding: 12px 12px 52px 12px;
+  box-shadow: 3px 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Notebook Paper ── */
+.notebook-paper {
+  background-color: white;
+  background-image: linear-gradient(#e8e0d0 1px, transparent 1px);
+  background-size: 100% 28px;
+  background-position: 0 28px;
+  border-left: 3px solid #ffb6c1;
+  padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Paper Card ── */
+.paper-card {
+  background: white;
+  border: 1px solid #e0d5c5;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.paper-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 3px 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+/* ── Stamp ── */
+.stamp {
+  display: inline-block;
+  border: 3px solid var(--accent-coral);
+  border-radius: 4px;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: rotate(-4deg);
+  color: var(--accent-coral);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+/* ── Marker Highlight ── */
+.marker-highlight {
+  background: linear-gradient(180deg, transparent 55%, var(--tape-yellow) 55%);
+  padding: 0 4px;
+}
+
+/* ── Hand‑drawn Underline ── */
+.hand-underline {
+  position: relative;
+  display: inline-block;
+}
+.hand-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: -4px;
+  right: -4px;
+  height: 8px;
+  background: var(--tape-yellow);
+  opacity: 0.5;
+  transform: rotate(-1deg);
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* ── Coffee Stain Ring ── */
+.coffee-stain {
+  position: relative;
+}
+.coffee-stain::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid rgba(139, 115, 85, 0.12);
+  top: -20px;
+  right: -20px;
+  pointer-events: none;
+}
+
+/* ── Torn Paper Edges ── */
+.torn-top {
+  clip-path: polygon(
+    0% 4%, 3% 1%, 6% 4%, 10% 2%, 14% 5%, 18% 1%, 22% 3%, 26% 5%,
+    30% 2%, 34% 4%, 38% 1%, 42% 3%, 46% 5%, 50% 2%, 54% 4%, 58% 1%,
+    62% 3%, 66% 5%, 70% 2%, 74% 4%, 78% 1%, 82% 3%, 86% 5%, 90% 2%,
+    94% 4%, 98% 1%, 100% 3%, 100% 100%, 0% 100%
+  );
+}
+.torn-bottom {
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% 96%, 98% 99%, 94% 96%, 90% 98%, 86% 95%, 82% 97%, 78% 99%,
+    74% 96%, 70% 98%, 66% 95%, 62% 97%, 58% 99%, 54% 96%, 50% 98%,
+    46% 95%, 42% 97%, 38% 99%, 34% 96%, 30% 98%, 26% 95%, 22% 97%,
+    18% 99%, 14% 96%, 10% 98%, 6% 96%, 3% 99%, 0% 96%
+  );
+}
+
+/* ── Doodle decorations ── */
+.doodle-dots {
+  background-image: radial-gradient(var(--kraft) 2px, transparent 2px);
+  background-size: 16px 16px;
+}
+
+/* ── Scrapbook section divider ── */
+.scrapbook-divider {
+  width: 100%;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--kraft),
+    var(--kraft) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  opacity: 0.4;
+  margin: 2rem 0;
+}
+
+/* ── Project card (scrapbook version) ── */
+.project-card {
+  background: white;
+  border: 1px solid #e0d5c5;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-6px) rotate(0deg) !important;
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Postcard ── */
+.postcard {
+  background: white;
+  border: 2px solid var(--kraft);
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.postcard::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 60px;
+  height: 70px;
+  border: 2px dashed var(--kraft);
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+/* ── Section padding for scrapbook ── */
+.scrapbook-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* ── Typewriter cursor ── */
+.typed-cursor {
+  color: var(--accent-coral) !important;
+}
+
+/* ── Graffiti text (spray-paint style) ── */
+.graffiti-text {
+  font-family: var(--font-caveat), cursive;
+  font-weight: 700;
+  opacity: 0.12;
+  letter-spacing: 2px;
+  user-select: none;
+  text-transform: lowercase;
+}
+
+/* ── Social Link Popup ── */
+.social-link-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.social-popup {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  padding: 10px 16px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+}
+.social-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: inherit;
+}
+.social-link-wrapper:hover .social-popup {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+/* GitHub popup */
+.social-popup-github {
+  background: var(--sticky-yellow);
+  border: 2px solid var(--kraft);
+  color: var(--ink);
+}
+.social-popup-github::after {
+  border-top-color: var(--sticky-yellow);
+}
+
+/* LinkedIn popup */
+.social-popup-linkedin {
+  background: var(--sticky-blue);
+  border: 2px solid var(--tape-blue);
+  color: var(--ink);
+}
+.social-popup-linkedin::after {
+  border-top-color: var(--sticky-blue);
+}
+
+/* Email popup */
+.social-popup-email {
+  background: var(--sticky-pink);
+  border: 2px solid var(--tape-pink);
+  color: var(--ink);
+}
+.social-popup-email::after {
+  border-top-color: var(--sticky-pink);
+}
