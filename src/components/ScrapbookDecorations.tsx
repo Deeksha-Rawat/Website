@@ -370,7 +370,7 @@ const decorations: DecoItem[] = [
   {
     Component: PaperPlaneFilled,
     xPct: 5,
-    yPct: 8,
+    yPct: 11,
     size: 48,
     color: "var(--accent-coral)",
     baseRotate: 15,
@@ -403,7 +403,7 @@ const decorations: DecoItem[] = [
   {
     Component: PaperPlaneFilled,
     xPct: 50,
-    yPct: 5,
+    yPct: 11,
     size: 40,
     color: "var(--tape-lavender)",
     baseRotate: -10,
@@ -513,7 +513,7 @@ const decorations: DecoItem[] = [
   {
     Component: Star,
     xPct: 82,
-    yPct: 5,
+    yPct: 11,
     size: 20,
     color: "var(--accent-coral)",
     baseRotate: -8,
@@ -545,7 +545,7 @@ const decorations: DecoItem[] = [
   {
     Component: Heart,
     xPct: 70,
-    yPct: 8,
+    yPct: 11,
     size: 18,
     color: "var(--accent-coral)",
     baseRotate: 20,
@@ -569,7 +569,7 @@ const decorations: DecoItem[] = [
   {
     Component: GraffitiSplat,
     xPct: 25,
-    yPct: 5,
+    yPct: 13,
     size: 90,
     color: "var(--tape-pink)",
     baseRotate: -8,
@@ -605,6 +605,9 @@ const REPULSE_STRENGTH = 120;
 const WANDER_INTERVAL_MIN = 5000; // ms
 const WANDER_INTERVAL_MAX = 10000; // ms
 
+// Keep wandering items clear of the sticky header/nav bar.
+const HEADER_SAFE_PX = 100;
+
 function randomBetween(a: number, b: number) {
   return a + Math.random() * (b - a);
 }
@@ -612,15 +615,18 @@ function randomBetween(a: number, b: number) {
 /**
  * Compute a random waypoint in px, measured from the item's CSS anchor.
  * The target is a random spot on the full viewport, converted to an offset
- * from the element's anchor (xPct%, yPct%).
+ * from the element's anchor (xPct%, yPct%). The Y target is clamped so it
+ * never lands inside the header's safe zone at the top of the viewport.
  */
 function randomViewportOffset(anchorXPct: number, anchorYPct: number) {
-  // Pick a random target position anywhere on screen (with some padding)
-  const targetXPct = randomBetween(5, 95);
-  const targetYPct = randomBetween(5, 95);
-  // Convert % difference to px using viewport dimensions
   const vw = typeof window !== "undefined" ? window.innerWidth : 1200;
   const vh = typeof window !== "undefined" ? window.innerHeight : 800;
+  const minYPct = Math.min(90, (HEADER_SAFE_PX / vh) * 100);
+  // Pick a random target position anywhere on screen (with some padding),
+  // excluding the header strip
+  const targetXPct = randomBetween(5, 95);
+  const targetYPct = randomBetween(Math.max(5, minYPct), 95);
+  // Convert % difference to px using viewport dimensions
   const dx = ((targetXPct - anchorXPct) / 100) * vw;
   const dy = ((targetYPct - anchorYPct) / 100) * vh;
   return { x: dx, y: dy };
