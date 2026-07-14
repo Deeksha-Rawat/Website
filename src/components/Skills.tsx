@@ -29,6 +29,12 @@ const frontendSkills: Skill[] = [
     color: "var(--sticky-yellow)",
   },
   {
+    name: "TypeScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    rotate: 2,
+    color: "var(--sticky-blue)",
+  },
+  {
     name: "ReactJs",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     rotate: 2,
@@ -58,6 +64,12 @@ const frontendSkills: Skill[] = [
     rotate: -2,
     color: "var(--sticky-green)",
   },
+  {
+    name: "Redux Toolkit",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+    rotate: 2,
+    color: "var(--sticky-pink)",
+  },
 ];
 
 const toolSkills: Skill[] = [
@@ -74,6 +86,12 @@ const toolSkills: Skill[] = [
     color: "var(--sticky-pink)",
   },
   {
+    name: "GitHub",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    rotate: 2,
+    color: "var(--sticky-yellow)",
+  },
+  {
     name: "BitBucket",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bitbucket/bitbucket-original.svg",
     rotate: 1,
@@ -84,6 +102,81 @@ const toolSkills: Skill[] = [
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg",
     rotate: -2,
     color: "var(--sticky-yellow)",
+  },
+  {
+    name: "Figma",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    rotate: -1,
+    color: "var(--sticky-green)",
+  },
+  {
+    name: "Postman",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+    rotate: 3,
+    color: "var(--sticky-pink)",
+  },
+];
+
+interface TagCategory {
+  title: string;
+  emoji: string;
+  tags: string[];
+  color: string;
+}
+
+const tagCategories: TagCategory[] = [
+  {
+    title: "State Management",
+    emoji: "🔄",
+    tags: ["Redux Toolkit (RTK Query)", "Context API"],
+    color: "var(--sticky-pink)",
+  },
+  {
+    title: "UI & Architecture",
+    emoji: "🎨",
+    tags: [
+      "Component-Based Architecture",
+      "Design Systems",
+      "Responsive & Accessible UI",
+      "Cross-Browser Compatibility",
+    ],
+    color: "var(--sticky-blue)",
+  },
+  {
+    title: "Performance & SEO",
+    emoji: "⚡",
+    tags: [
+      "Core Web Vitals",
+      "Lazy Loading",
+      "Code Splitting",
+      "Image Optimization",
+      "Google PageSpeed Optimization",
+    ],
+    color: "var(--sticky-green)",
+  },
+  {
+    title: "System Design & Engineering Practices",
+    emoji: "🧩",
+    tags: [
+      "Scalable Frontend Architecture",
+      "System Design",
+      "Code Reviews",
+      "Component & API Design",
+      "Debugging",
+    ],
+    color: "var(--sticky-yellow)",
+  },
+  {
+    title: "APIs & Data",
+    emoji: "🔌",
+    tags: ["REST API Integration & Design", "JSON", "Dynamic Content Rendering"],
+    color: "var(--sticky-pink)",
+  },
+  {
+    title: "Workflow Practices",
+    emoji: "🚀",
+    tags: ["Agile/Scrum", "Version Control", "AI-Assisted Development Workflows"],
+    color: "var(--sticky-blue)",
   },
 ];
 
@@ -101,6 +194,28 @@ const stickerVariants = {
     transition: { duration: 0.4, type: "spring" as const, stiffness: 300 },
   }),
 };
+
+function TagChip({
+  label,
+  color,
+  rotate,
+}: {
+  label: string;
+  color: string;
+  rotate: number;
+}) {
+  return (
+    <motion.span
+      className="inline-block font-hand text-ink text-sm sm:text-base px-4 py-1.5 rounded-full shadow-sm border border-ink/10"
+      style={{ background: color }}
+      variants={stickerVariants}
+      custom={rotate}
+      whileHover={{ scale: 1.08, rotate: 0, zIndex: 10 }}
+    >
+      {label}
+    </motion.span>
+  );
+}
 
 function StickerCard({ skill }: { skill: Skill }) {
   return (
@@ -175,6 +290,45 @@ export default function Skills() {
           <StickerCard key={skill.name} skill={skill} />
         ))}
       </motion.div>
+
+      {/* Divider */}
+      <div className="scrapbook-divider mb-8 mt-12" />
+
+      {/* Practices & Concepts */}
+      <h3 className="font-caveat text-3xl font-bold text-coral mb-6">
+        Practices & Concepts 🧠
+      </h3>
+      <div className="space-y-8">
+        {tagCategories.map((category) => (
+          <motion.div
+            key={category.title}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.4 }}
+          >
+            <p className="font-hand text-ink-light text-lg mb-3">
+              {category.emoji} {category.title}
+            </p>
+            <motion.div
+              className="flex flex-wrap gap-3"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              {category.tags.map((tag, i) => (
+                <TagChip
+                  key={tag}
+                  label={tag}
+                  color={category.color}
+                  rotate={i % 2 === 0 ? -1.5 : 1.5}
+                />
+              ))}
+            </motion.div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }
