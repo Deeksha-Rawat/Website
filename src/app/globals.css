@@ -401,3 +401,13 @@ body {
 .social-popup-email::after {
   border-top-color: var(--sticky-pink);
 }
+
+/* Instagram popup */
+.social-popup-instagram {
+  background: var(--sticky-green);
+  border: 2px solid var(--tape-lavender);
+  color: var(--ink);
+}
+.social-popup-instagram::after {
+  border-top-color: var(--sticky-green);
+}

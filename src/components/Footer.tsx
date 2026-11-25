@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
   {
@@ -26,6 +26,14 @@ const socialLinks = [
     popupClass: "social-popup-email",
     handle: "deeksha9557@gmail.com",
     hoverRotate: "-rotate-3",
+  },
+  {
+    href: "https://www.instagram.com/soft_blur01/",
+    icon: Instagram,
+    label: "Follow my reels! 📸",
+    popupClass: "social-popup-instagram",
+    handle: "@soft_blur01",
+    hoverRotate: "rotate-3",
   },
 ];
 
