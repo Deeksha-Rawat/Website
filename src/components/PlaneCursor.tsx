@@ -114,7 +114,7 @@ export default function PlaneCursor() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 z-[9999] pointer-events-none"
+      className="fixed inset-0 z-[2147483647] pointer-events-none"
       aria-hidden="true"
     />
   );

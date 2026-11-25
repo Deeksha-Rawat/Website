@@ -117,14 +117,6 @@ body {
 
 /* ── Push Pin ── */
 .push-pin {
-  position: relative;
-}
-.push-pin::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 22px;
   height: 22px;
   background: radial-gradient(circle at 38% 38%, #ff6b6b, #cc3333);

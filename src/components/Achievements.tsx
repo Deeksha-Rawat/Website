@@ -97,7 +97,7 @@ export default function Achievements() {
               style={{ background: item.noteColor }}
             >
               {/* Pin */}
-              <div className="push-pin" />
+              <div className="push-pin absolute -top-3 left-1/2 -translate-x-1/2" />
 
               <div className="text-4xl mb-4">{item.emoji}</div>
               <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/50 mb-4">
