@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Caveat, Patrick_Hand, Special_Elite } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const caveat = Caveat({
@@ -37,6 +38,11 @@ export default function RootLayout({
         className={`${caveat.variable} ${patrickHand.variable} ${specialElite.variable} overflow-x-hidden`}
       >
         {children}
+        <Script
+          src="https://telybot.com/widget.js"
+          data-key="tb_live_b8e07d067076aa16a2f06f44"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
